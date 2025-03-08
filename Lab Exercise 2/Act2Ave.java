@@ -2,16 +2,16 @@ import java.util.Scanner;
 
 class Act2Ave {
   public static void main(String[] args) {
-    Scanner myObj = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
     System.out.println("Enter name, age and salary:");
 
     // String input
-    String name = myObj.nextLine();
+    String name = sc.nextLine();
 
     // Numerical input
-    int age = myObj.nextInt();
-    double salary = myObj.nextDouble();
+    int age = sc.nextInt();
+    double salary = sc.nextDouble();
 
     // Output input by user
     System.out.println("Name: " + name);
