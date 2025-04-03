@@ -17,7 +17,8 @@ public class ZodiacSign {
         } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
             return "Libra";
         } else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) {
-            return "Scorpio11 && day >= 22) || (month == 12 && day <= 21)) {
+            return "Scorpio";
+        } else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) {
             return "Sagittarius";
         } else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
             return "Capricorn";
