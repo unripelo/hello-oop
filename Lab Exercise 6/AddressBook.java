@@ -1,22 +1,53 @@
-public class AddressBook {
-     public static void main(String[] args) {
-        AddressBook addressBook = new AddressBook();
+import java.util.ArrayList;
+import java.util.Iterator;
 
-        addressBook.AddEntry("Narisma", "El Salvador, Misamis Oriental", "0912-345-6789", "narisma@gmail.com");
-        addressBook.AddEntry("Mae", "Manila, Quezon City", "099-876-5432", "mae@gmail.com");
+class AddressBook {
+    private ArrayList<address> entries;
 
-        System.out.println("Added entries: ");
-        addressBook.ListEntries();
+    public AddressBook() {
+        entries = new ArrayList<>();
+    }
 
-        addressBook.UpdateEntry("Ira", "Opol, Misamis Oriental", "0912-345-678", "ira@gmail.com");
+    public void AddEntry(String name, String address, String telephoneNumber, String emailAddress) {
+        address newAddress = new address(name, address, telephoneNumber, emailAddress);
+        entries.add(newAddress);
+    }
 
-        System.out.println("Updated entry: ");
-        addressBook.ListEntries();
+    public void RemoveEntry(String name) {
+        Iterator<address> iterator = entries.iterator();
+        while (iterator.hasNext()) {
+            address currentAddress = iterator.next();
+            if (currentAddress.Name.equals(name)) {
+                iterator.remove();
+                return; // Exit after removing the first match
+            }
+        }
+        System.out.println("Entry with name '" + name + "' not found.");
+    }
 
-        addressBook.RemoveEntry("Mae");
+    public void UpdateEntry(String name, String newAddress, String newTelephoneNumber, String newEmailAddress) {
+        for (address currentAddress : entries) {
+            if (currentAddress.Name.equals(name)) {
+                currentAddress.setAddress(newAddress);
+                currentAddress.setTelephoneNumber(newTelephoneNumber);
+                currentAddress.setEmailAddress(newEmailAddress);
+                return; // Exit after updating the first match
+            }
+        }
+        System.out.println("Entry with name '" + name + "' not found.");
+    }
 
-        System.out.println("Removed entry: ");
-        addressBook.ListEntries();
-
+    public void ListEntries() {
+        if (entries.isEmpty()) {
+            System.out.println("Address book is empty.");
+            return;
+        }
+        for (address currentAddress : entries) {
+            System.out.println("Name: " + currentAddress.Name);
+            System.out.println("Address: " + currentAddress.getAddress());
+            System.out.println("Telephone Number: " + currentAddress.getTelephoneNumber());
+            System.out.println("Email Address: " + currentAddress.getEmailAddress());
+            System.out.println("--------------------");
+        }
     }
 }

@@ -4,11 +4,12 @@ public class AddressBookTest {
 
         addressBook.AddEntry("Narisma", "El Salvador, Misamis Oriental", "0912-345-6789", "narisma@gmail.com");
         addressBook.AddEntry("Mae", "Manila, Quezon City", "099-876-5432", "mae@gmail.com");
+        addressBook.AddEntry("Iona", "Davao City", "0978-234-2156", "iona@gmail.com");
 
         System.out.println("Added entries: ");
         addressBook.ListEntries();
 
-        addressBook.UpdateEntry("Ira", "Opol, Misamis Oriental", "0912-345-678", "ira@gmail.com");
+        addressBook.UpdateEntry("Narisma", "Opol, Misamis Oriental", "0912-345-678", "ira@gmail.com");
 
         System.out.println("Updated entry: ");
         addressBook.ListEntries();
