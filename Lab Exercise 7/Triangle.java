@@ -1,24 +1,24 @@
 class Triangle {
-    private double base;
-    private double height;
+    private int base;
+    private int height;
 
-    public void setBase(double base) {
+    public void setBase(int base) {
         this.base = base;
     }
 
-    public double getBase() {
+    public int getBase() {
         return base;
     }
 
-    public void setHeight(double height) {
+    public void setHeight(int height) {
         this.height = height;
     }
 
-    public double getHeight() {
+    public int getHeight() {
         return height;
     }
 
-    public double calculateArea() {
+    public int calculateArea() {
         return 0.5 * base * height;
     }
 }

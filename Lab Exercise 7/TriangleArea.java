@@ -6,14 +6,14 @@ public class TriangleArea {
         Triangle triangle = new Triangle();
 
         System.out.print("Please enter the base: ");
-        double baseInput = input.nextDouble();
+        int baseInput = input.nextDouble();
         triangle.setBase(baseInput);
 
         System.out.print("Please enter the height: ");
-        double heightInput = input.nextDouble();
+        int heightInput = input.nextDouble();
         triangle.setHeight(heightInput);
 
-        double area = triangle.calculateArea();
+        int area = triangle.calculateArea();
 
         System.out.println("The area of a triangle is : " + (int)area);
 
